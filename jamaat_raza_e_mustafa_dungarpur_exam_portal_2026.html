@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="hi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जमाअत रज़ा ए मुस्तफ़ा डूंगरपुर - इम्तिहान 2026</title>
+    <link rel="icon" href="./JRM EDUCATIONAL CENTER LOGO.jpeg" type="image/x-icon">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Urdu/Hindi Aesthetics -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        kbc: {
+                            gold: '#fbbf24',
+                            goldDark: '#d97706',
+                            bgDark: '#0b0f19',
+                            cardBg: '#111827',
+                            emerald: '#059669',
+                            navy: '#1e1b4b',
+                            ruby: '#9f1239'
+                        }
+                    },
+                    fontFamily: {
+                        hindi: ['Tiro Devanagari Hindi', 'serif'],
+                        arabic: ['Amiri', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 100%);
+            color: #f3f4f6;
+            font-family: 'Tiro Devanagari Hindi', 'Inter', serif;
+            min-height: 100vh;
+        }
+
+        /* Hexagonal / Diamond KBC Option Shapes */
+        .kbc-option {
+            clip-path: polygon(15px 0%, calc(100% - 15px) 0%, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0% 50%);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .kbc-option:hover:not(:disabled) {
+            transform: scale(1.02);
+            filter: brightness(1.25);
+        }
+
+        .kbc-glow-gold {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+        }
+
+        .kbc-glow-green {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .kbc-glow-red {
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f59e0b;
+            border-radius: 4px;
+        }
+
+        /* Islamic Pattern Overlay */
+        .islamic-bg {
+            background-color: #0b0f19;
+            background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#d97706 0.75px, #0b0f19 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="islamic-bg text-gray-100 flex flex-col min-h-screen">
+
+    <!-- Top Header -->
+    <header class="bg-slate-900/90 border-b border-amber-500/30 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-3 space-x-reverse">
+
+    <!-- Logo Circle -->
+    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-600 to-amber-300 p-0.5 flex items-center justify-center shadow-lg">
+
+        <!-- Inner Circle -->
+        <div class="w-full h-full bg-slate-950 rounded-full flex items-center justify-center overflow-hidden">
+
+            <!-- Round Logo -->
+            <img 
+                src="./JRM EDUCATIONAL CENTER LOGO.jpeg" 
+                alt="JRM EDUCATIONAL CENTER LOGO"
+                class="w-full h-full rounded-full object-cover"
+            >
+
+        </div>
+    </div>
+
+    <!-- Title -->
+    <div>
+        <h1 class="text-xl md:text-2xl font-bold text-amber-400 tracking-wide font-hindi">
+            जमाअत रज़ा ए मुस्तफ़ा डूंगरपुर
+        </h1>
+
+        <p class="text-xs text-amber-200/70">
+            दीनी इम्तिहान क्विज़ - 2026
+        </p>
+    </div>
+
+</div>
+
+            <!-- Controls -->
+            <div class="flex items-center space-x-3">
+                <button id="soundToggleBtn" onclick="toggleSound()" class="p-2.5 rounded-lg bg-slate-800 border border-amber-500/30 text-amber-400 hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-volume-high text-lg" id="soundIcon"></i>
+                </button>
+                <button onclick="resetAllProgress()" class="px-3 py-1.5 text-xs rounded-lg bg-red-950/60 border border-red-500/40 text-red-300 hover:bg-red-900 transition">
+                    <i class="fa-solid fa-rotate-right mr-1"></i> रीसेट
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full">
+
+        <!-- Category Selection Header -->
+        <section class="mb-8 text-center">
+            <h2 class="text-lg md:text-xl text-amber-300 mb-4 font-semibold">इम्तिहान का दर्जा (Category) चुनें:</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="selectCategory('junior')" id="catBtn-junior" class="category-btn px-6 py-3 rounded-xl border-2 border-amber-500/40 bg-slate-900/80 hover:border-amber-400 text-amber-300 font-bold flex items-center space-x-2 transition shadow-lg">
+                    <i class="fa-solid fa-child text-lg mr-2"></i>
+                    <span>Junior (जूनियर - मौखिक Q&A)</span>
+                </button>
+                <button onclick="selectCategory('senior')" id="catBtn-senior" class="category-btn px-6 py-3 rounded-xl border-2 border-amber-500/40 bg-slate-900/80 hover:border-amber-400 text-amber-300 font-bold flex items-center space-x-2 transition shadow-lg">
+                    <i class="fa-solid fa-user-graduate text-lg mr-2"></i>
+                    <span>Senior (सीनियर - MCQ, Match, Short)</span>
+                </button>
+                <button onclick="selectCategory('supersenior')" id="catBtn-supersenior" class="category-btn px-6 py-3 rounded-xl border-2 border-amber-500/40 bg-slate-900/80 hover:border-amber-400 text-amber-300 font-bold flex items-center space-x-2 transition shadow-lg">
+                    <i class="fa-solid fa-crown text-lg mr-2"></i>
+                    <span>Super Senior (सुपर सीनियर - Full Syllabus)</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- JUNIOR SECTION CONTAINER -->
+        <div id="juniorView" class="hidden space-y-6">
+            <div class="bg-slate-900/90 border border-amber-500/30 rounded-2xl p-6 shadow-2xl">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-6 pb-4 border-b border-slate-800 gap-4">
+                    <div>
+                        <span class="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs rounded-full border border-amber-500/30 font-semibold">Category: Junior</span>
+                        <h3 class="text-2xl font-bold text-amber-400 mt-1">मौखिक प्रश्नोत्तर व दुआएँ (Oral Q&A & Duas)</h3>
+                    </div>
+                    <!-- Mode Toggle -->
+                    <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800">
+                        <button onclick="setJuniorTab('practice')" id="jTabPract" class="px-4 py-2 text-sm rounded-lg font-bold bg-amber-500 text-slate-950 transition">अभ्यास (Flashcards)</button>
+                        <button onclick="setJuniorTab('duas')" id="jTabDuas" class="px-4 py-2 text-sm rounded-lg font-bold text-gray-300 hover:text-white transition">दुआएँ (Duas)</button>
+                        <button onclick="setJuniorTab('quiz')" id="jTabQuiz" class="px-4 py-2 text-sm rounded-lg font-bold text-gray-300 hover:text-white transition">केबीसी टेस्ट (KBC Mode)</button>
+                    </div>
+                </div>
+
+                <!-- Junior Practice Mode -->
+                <div id="juniorPracticeMode" class="space-y-6">
+                    <div class="flex justify-between items-center text-sm text-gray-400">
+                        <span id="juniorCounter">प्रश्न 1 / 60</span>
+                        <div class="flex space-x-2">
+                            <button onclick="prevJuniorQ()" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded-lg text-amber-300">पिछला</button>
+                            <button onclick="nextJuniorQ()" class="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg font-bold">अगला</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950/80 border-2 border-amber-500/40 rounded-2xl p-8 text-center min-h-[220px] flex flex-col justify-center items-center shadow-inner relative overflow-hidden">
+                        <div class="text-amber-400/20 text-6xl absolute top-3 left-4 font-serif">Q</div>
+                        <h4 id="juniorQuestionText" class="text-xl md:text-2xl font-bold text-amber-200 mb-6 relative z-10">
+                            <!-- Question Text -->
+                        </h4>
+                        <button onclick="toggleJuniorAnswer()" id="revealAnsBtn" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 text-slate-950 font-bold hover:brightness-110 shadow-lg">
+                            <i class="fa-solid fa-eye mr-2"></i> उत्तर देखें
+                        </button>
+                        <div id="juniorAnswerContainer" class="hidden mt-6 p-4 bg-emerald-950/50 border border-emerald-500/40 rounded-xl text-emerald-200 text-lg md:text-xl font-bold w-full max-w-2xl">
+                            <!-- Answer Text -->
+                        </div>
+                    </div>
+
+                    <!-- All Q&A Table List toggle -->
+                    <div class="mt-8">
+                        <details class="bg-slate-950 rounded-xl border border-slate-800 p-4">
+                            <summary class="cursor-pointer font-bold text-amber-400 hover:text-amber-300 flex items-center justify-between">
+                                <span><i class="fa-solid fa-list-check mr-2"></i> सभी 60 प्रश्नों की पूरी सूची देखें</span>
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </summary>
+                            <div class="mt-4 space-y-3 max-h-96 overflow-y-auto pr-2" id="juniorFullList">
+                                <!-- Rendered dynamically -->
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Junior Duas Tab -->
+                <div id="juniorDuasMode" class="hidden space-y-4">
+                    <h4 class="text-xl font-bold text-amber-300 mb-4 border-b border-amber-500/30 pb-2">रोज़मर्रा की मसनून दुआएँ</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="duasGrid">
+                        <!-- Duas list -->
+                    </div>
+                </div>
+
+                <!-- Junior KBC Quiz Mode -->
+                <div id="juniorQuizContainer" class="hidden space-y-6">
+                    <!-- KBC Interface injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SENIOR / SUPER SENIOR MAIN WORKSPACE -->
+        <div id="examWorkspace" class="hidden space-y-8">
+            
+            <!-- Exam Mode Tabs Bar -->
+            <div class="bg-slate-900/90 border border-amber-500/30 rounded-2xl p-4 flex flex-wrap justify-between items-center gap-4 shadow-xl">
+                <div>
+                    <h3 id="currentCategoryTitle" class="text-xl md:text-2xl font-bold text-amber-400">Senior Exam Panel</h3>
+                    <p class="text-xs text-gray-400">केबीसी बहुविकल्पीय प्रश्न, जोड़ियाँ, एवं लघु/दीर्घ उत्तर</p>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="switchExamTab('mcq')" id="tabMcqBtn" class="px-4 py-2 rounded-xl text-sm font-bold bg-amber-500 text-slate-950 shadow-md">
+                        <i class="fa-solid fa-gamepad mr-1"></i> KBC MCQs (50)
+                    </button>
+                    <button onclick="switchExamTab('match')" id="tabMatchBtn" class="px-4 py-2 rounded-xl text-sm font-bold bg-slate-800 text-gray-300 hover:bg-slate-700">
+                        <i class="fa-solid fa-arrows-split-up-and-left mr-1"></i> सही जोड़ियाँ (15)
+                    </button>
+                    <button onclick="switchExamTab('short')" id="tabShortBtn" class="px-4 py-2 rounded-xl text-sm font-bold bg-slate-800 text-gray-300 hover:bg-slate-700">
+                        <i class="fa-solid fa-pen-to-square mr-1"></i> लघु उत्तर (10)
+                    </button>
+                    <button onclick="switchExamTab('long')" id="tabLongBtn" class="hidden px-4 py-2 rounded-xl text-sm font-bold bg-slate-800 text-gray-300 hover:bg-slate-700">
+                        <i class="fa-solid fa-scroll mr-1"></i> दीर्घ उत्तर (10)
+                    </button>
+                    <button onclick="switchExamTab('result')" id="tabResultBtn" class="px-4 py-2 rounded-xl text-sm font-bold bg-emerald-700 text-emerald-100 hover:bg-emerald-600">
+                        <i class="fa-solid fa-award mr-1"></i> कुल परिणाम (Scorecard)
+                    </button>
+                </div>
+            </div>
+
+            <!-- TAB 1: KBC MCQ QUIZ ENGINE -->
+            <div id="examMcqSection" class="space-y-6">
+                
+                <!-- KBC Header status -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <!-- Score / Counter -->
+                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl p-3 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 font-bold">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">प्रश्न प्रगति</p>
+                            <p id="mcqProgressText" class="font-bold text-amber-300">1 / 50</p>
+                        </div>
+                    </div>
+
+                    <!-- Current Prize / Points -->
+                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl p-3 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">कुल स्कोर अंक</p>
+                            <p id="mcqScorePoints" class="font-bold text-emerald-400">0 Points</p>
+                        </div>
+                    </div>
+
+                    <!-- Timer Option -->
+                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl p-3 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 font-bold">
+                            <i class="fa-solid fa-stopwatch"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">समय प्रति प्रश्न</p>
+                            <p id="timerDisplay" class="font-bold text-red-300">30 सेकण्ड</p>
+                        </div>
+                    </div>
+
+                    <!-- Lifelines -->
+                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl p-2 flex items-center justify-around">
+                        <button onclick="useLifeline('5050')" id="lifeline5050" class="flex flex-col items-center justify-center w-12 h-10 rounded-lg bg-indigo-950 border border-amber-400/40 hover:bg-indigo-900 text-amber-300 text-xs font-bold transition title='50:50 Lifeline'">
+                            <span>50:50</span>
+                        </button>
+                        <button onclick="useLifeline('poll')" id="lifelinePoll" class="flex flex-col items-center justify-center w-12 h-10 rounded-lg bg-indigo-950 border border-amber-400/40 hover:bg-indigo-900 text-amber-300 text-xs font-bold transition title='Audience Poll'">
+                            <i class="fa-solid fa-chart-bar text-sm"></i>
+                        </button>
+                        <button onclick="useLifeline('skip')" id="lifelineSkip" class="flex flex-col items-center justify-center w-12 h-10 rounded-lg bg-indigo-950 border border-amber-400/40 hover:bg-indigo-900 text-amber-300 text-xs font-bold transition title='Skip Question'">
+                            <i class="fa-solid fa-forward text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KBC Main Stage Display -->
+                <div class="bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 border-2 border-amber-500/50 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                    
+                    <!-- KBC Glowing Ornament -->
+                    <div class="absolute -top-12 -left-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+                    <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+
+                    <!-- Question Hexagon Box -->
+                    <div class="relative z-10 mb-8">
+                        <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border-2 border-amber-400/80 rounded-2xl p-6 md:p-8 text-center shadow-xl kbc-glow-gold">
+                            <p class="text-amber-400 text-xs font-bold tracking-widest uppercase mb-2">प्रश्न क्रमांक <span id="kbcQNum">1</span></p>
+                            <h3 id="kbcQuestionText" class="text-xl md:text-2xl font-bold text-amber-100 leading-relaxed">
+                                <!-- Question text -->
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Options Grid (4 Hexagonal/Diamond buttons) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10" id="kbcOptionsGrid">
+                        <!-- Option buttons generated dynamically -->
+                    </div>
+
+                    <!-- Audience Poll Popup Modal -->
+                    <div id="audiencePollModal" class="hidden absolute inset-0 bg-slate-950/95 z-30 flex flex-col items-center justify-center p-6 rounded-3xl">
+                        <h4 class="text-amber-400 font-bold text-xl mb-4"><i class="fa-solid fa-chart-bar mr-2"></i> ऑडियंस पोल (Audience Opinion)</h4>
+                        <div class="w-full max-w-md space-y-3" id="pollBarsContainer">
+                            <!-- Dynamically generated bars -->
+                        </div>
+                        <button onclick="closePollModal()" class="mt-6 px-6 py-2 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400">ठीक है (Close)</button>
+                    </div>
+
+                    <!-- Next Question Action Bar -->
+                    <div id="kbcNextBar" class="hidden mt-8 flex justify-between items-center bg-slate-900/90 p-4 rounded-xl border border-amber-500/30">
+                        <div id="kbcFeedbackText" class="font-bold text-lg">
+                            <!-- Feedback -->
+                        </div>
+                        <button onclick="loadNextKbcQuestion()" class="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-bold text-lg hover:brightness-110 shadow-lg">
+                            अगला प्रश्न <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TAB 2: MATCHING COLUMNS SECTION -->
+            <div id="examMatchSection" class="hidden space-y-6">
+                <div class="bg-slate-900/90 border border-amber-500/30 rounded-2xl p-6 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400"><i class="fa-solid fa-arrows-split-up-and-left mr-2"></i> सही जोड़ियाँ मिलाइए (Match Column A with Column B)</h3>
+                            <p class="text-xs text-gray-400">प्रत्येक प्रश्न के सामने सही उत्तर विकल्प का चुनाव करें।</p>
+                        </div>
+                        <button onclick="checkMatchAnswers()" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl shadow-lg">
+                            <i class="fa-solid fa-check-double mr-1"></i> जोड़ियाँ जांचें (Verify)
+                        </button>
+                    </div>
+
+                    <div id="matchContainer" class="space-y-3">
+                        <!-- Match rows injected dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: SHORT ANSWERS SECTION -->
+            <div id="examShortSection" class="hidden space-y-6">
+                <div class="bg-slate-900/90 border border-amber-500/30 rounded-2xl p-6 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400"><i class="fa-solid fa-pen-to-square mr-2"></i> लघु उत्तरीय प्रश्न (Short Answer Questions)</h3>
+                            <p class="text-xs text-gray-400">अपना उत्तर लिखें और 'आदर्श उत्तर देखें' पर क्लिक करके खुद का मूल्यांकन करें।</p>
+                        </div>
+                    </div>
+
+                    <div id="shortQuestionsContainer" class="space-y-6">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: LONG / DESCRIPTIVE ANSWERS SECTION (SUPER SENIOR ONLY) -->
+            <div id="examLongSection" class="hidden space-y-6">
+                <div class="bg-slate-900/90 border border-amber-500/30 rounded-2xl p-6 shadow-2xl">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-800">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-400"><i class="fa-solid fa-scroll mr-2"></i> विस्तृत/दीर्घ उत्तरीय प्रश्न (Descriptive Questions - 2.5 Marks Each)</h3>
+                            <p class="text-xs text-gray-400">विस्तार से उत्तर लिखें एवं आदर्श उत्तर से मिलान करके अंक प्रदान करें।</p>
+                        </div>
+                    </div>
+
+                    <div id="longQuestionsContainer" class="space-y-8">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: COMPREHENSIVE RESULT SCORECARD -->
+            <div id="examResultSection" class="hidden space-y-6">
+                <div class="bg-slate-900/90 border-2 border-amber-500/40 rounded-2xl p-8 shadow-2xl text-center">
+                    <div class="w-20 h-20 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-amber-400 text-amber-400 text-3xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-amber-400 font-hindi mb-2">इम्तिहान परिणाम (Examination Results)</h3>
+                    <p class="text-gray-300 text-sm mb-6">जमाअत रज़ा ए मुस्तफ़ा डूंगरपुर - 2026</p>
+
+                    <!-- Score Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8 text-left">
+                        
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <p class="text-xs text-gray-400">बहुविकल्पीय (MCQ)</p>
+                            <h4 id="resMcqScore" class="text-2xl font-bold text-amber-300">0 / 50</h4>
+                        </div>
+
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <p class="text-xs text-gray-400">सही जोड़ियाँ (Matching)</p>
+                            <h4 id="resMatchScore" class="text-2xl font-bold text-amber-300">0 / 15</h4>
+                        </div>
+
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <p class="text-xs text-gray-400">लघु प्रश्न उत्तर</p>
+                            <h4 id="resShortScore" class="text-2xl font-bold text-amber-300">0 / 10</h4>
+                        </div>
+
+                        <div id="resLongBox" class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <p class="text-xs text-gray-400">दीर्घ प्रश्न उत्तर (25 अंकादि)</p>
+                            <h4 id="resLongScore" class="text-2xl font-bold text-amber-300">0 / 25</h4>
+                        </div>
+
+                    </div>
+
+                    <!-- Total Score Banner -->
+                    <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 border border-emerald-500/50 p-6 rounded-2xl mb-8">
+                        <p class="text-sm text-emerald-300 uppercase tracking-widest font-bold">कुल अंक व प्रतिशत</p>
+                        <div class="text-4xl md:text-5xl font-black text-emerald-400 my-2" id="resTotalPercentage">0%</div>
+                        <p class="text-xs text-emerald-200/80" id="resGradeStatus">ग्रेड: उत्कृष्ट / Mumtaz</p>
+                    </div>
+
+                    <div class="flex justify-center space-x-4">
+                        <button onclick="printResultCard()" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold flex items-center">
+                            <i class="fa-solid fa-print mr-2"></i> मार्कशीट प्रिंट करें (Print Result)
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-4 text-center text-xs text-gray-500 mt-auto">
+        <p>© 2026 जमाअत रज़ा ए मुस्तफ़ा डूंगरपुर | दीनी तालीमी इम्तिहान डिजिटल बोर्ड</p>
+    </footer>
+
+    <script>
+        /* -------------------------------------------------------------
+           COMPLETE QUESTION SYLLABUS DATA STRUCTURE
+        ------------------------------------------------------------- */
+
+        // Junior Q&A Data (60 Questions)
+        const JUNIOR_QA = [
+            { id: 1, q: "अल्लाह तआला ने सबसे पहले किसे पैदा किया?", a: "अल्लाह तआला ने सबसे पहले हमारे आका ﷺ के नूर को पैदा किया।" },
+            { id: 2, q: "हमारे आका ﷺ का पूरा नाम क्या है?", a: "हमारे आका ﷺ का पूरा नाम हज़रत मुहम्मद मुस्तफा ﷺ है।" },
+            { id: 3, q: "हमारे आका ﷺ के वालिद का नाम क्या है?", a: "हज़रत अब्दुल्लाह रदीयल्लाहु तआला अन्हु।" },
+            { id: 4, q: "हमारे आका ﷺ की वालिदा का नाम क्या है?", a: "हज़रत आमीना रदीयल्लाहु तआला अन्हा।" },
+            { id: 5, q: "हमारे आका ﷺ के दादा का नाम क्या है?", a: "हज़रत अब्दुल मुतलिब रदीयल्लाहु तआला अन्हु।" },
+            { id: 6, q: "इस्लाम के अरकान कितने हैं?", a: "इस्लाम के 5 अरकान हैं: (1) कलीमा (2) नमाज़ (3) रोज़ा (4) हज (5) ज़कात" },
+            { id: 7, q: "नमाज़ें कितनी हैं?", a: "पांच हैं: (1) फज्र (2) ज़ुहर (3) अस्र (4) मगरिब (5) ईशा" },
+            { id: 8, q: "हमारे नबी ﷺ की उम्र शरीफ कितनी हुई?", a: "63 साल" },
+            { id: 9, q: "मशहूर आसमानी किताबें कितनी हैं?", a: "4 हैं" },
+            { id: 10, q: "उनके नाम क्या हैं?", a: "(1) तौरात शरीफ (2) ज़बूर शरीफ (3) इंजील शरीफ (4) कुरआन शरीफ" },
+            { id: 11, q: "तौरात शरीफ किस पैगम्बर पर नाज़िल हुई?", a: "तौरात शरीफ हज़रत मूसा अलैहिस्सलाम पर नाज़िल हुई।" },
+            { id: 12, q: "ज़बूर शरीफ किस पैगम्बर पर नाज़िल हुई?", a: "ज़बूर शरीफ हज़रत दाऊद अलैहिस्सलाम पर नाज़िल हुई।" },
+            { id: 13, q: "इंजील शरीफ किस पैगम्बर पर नाज़िल हुई?", a: "इंजील शरीफ हज़रत ईसा अलैहिस्सलाम पर नाज़िल हुई।" },
+            { id: 14, q: "कुरआन शरीफ किस पैगम्बर पर नाज़िल हुई?", a: "हमारे आका ﷺ पर नाज़िल हुई।" },
+            { id: 15, q: "इन किताबों के अलावा जो छोटी छोटी किताबें नाज़िल हुई उसे क्या कहते हैं?", a: "सहिफ़े" },
+            { id: 16, q: "कुरआन शरीफ में कितने पारे हैं?", a: "30 पारे हैं" },
+            { id: 17, q: "कुरआन शरीफ में कुल कितने सजदे हैं?", a: "14 सजदे" },
+            { id: 18, q: "कुरआन शरीफ में कुल कितनी आयतें हैं?", a: "6666 आयतें" },
+            { id: 19, q: "कुरआन शरीफ में वो कौनसी सूरत है जिससे पहले बसमला नहीं पढ़ा जाता?", a: "सूरह तौबा" },
+            { id: 20, q: "कुरआन शरीफ में कुल कितनी मंज़िले हैं?", a: "07 मंज़िले" },
+            { id: 21, q: "फज्र में कितनी रकअत हैं?", a: "4 रकअत (2 सुन्नत, 2 फ़र्ज़)" },
+            { id: 22, q: "ज़ूहर में कितनी रकअत होती हैं?", a: "12 रकअत (4 सुन्नत, 4 फ़र्ज़, 2 सुन्नत, 2 नफ़्ल)" },
+            { id: 23, q: "अस्र में कितनी रकअत हैं?", a: "8 रकअत (4 सुन्नत, 4 फ़र्ज़)" },
+            { id: 24, q: "मगरिब में कितनी रकअत हैं?", a: "7 रकअत (3 फ़र्ज़, 2 सुन्नत, 2 नफ़्ल)" },
+            { id: 25, q: "ईशा में कितनी रकअत होती हैं?", a: "17 रकअत (4 सुन्नत, 4 फ़र्ज़, 2 सुन्नत, 2 नफ़्ल, 3 वित्र, 2 नफ़्ल)" },
+            { id: 26, q: "वो सहाबी जिनका लक़ब ज़ुन्नुरैन है?", a: "हज़रत उस्मान ए गनी रदीयल्लाहु तआला अन्हु" },
+            { id: 27, q: "कब्र में मुर्दों से कितने सवाल होंगे?", a: "3 सवाल" },
+            { id: 28, q: "हुज़ूर ए पाक ﷺ कहां पैदा हुए?", a: "मक्का शरीफ" },
+            { id: 29, q: "हुज़ूर ए पाक ﷺ की विलादत किस कबीले में हुई?", a: "कुरैश कबीले में" },
+            { id: 30, q: "अल्लाह तआला ने सबसे पहले इस दुनिया में किस नबी को भेजा?", a: "हज़रत आदम अलैहिस्सलाम को" },
+            { id: 31, q: "ऐसी कौनसी नमाज़ है जिसमें सजदा नहीं किया जाता?", a: "नमाज़ ए जनाज़ा" },
+            { id: 32, q: "हुज़ूर ए पाक ﷺ ने किस शहर से हिजरत की?", a: "मक्का शरीफ से मदीना शरीफ" },
+            { id: 33, q: "अल्लाह तआला ने किस बादशाह को नदी में डूबा दिया?", a: "फिरऔन को" },
+            { id: 34, q: "जन्नत के कितने दरवाज़े हैं?", a: "8 दरवाज़े" },
+            { id: 35, q: "जहन्नम के कितने दरवाज़े हैं?", a: "7 दरवाज़े" },
+            { id: 36, q: "हमारे आका ﷺ का मज़ार शरीफ कहां पर है?", a: "मदीना शरीफ में" },
+            { id: 37, q: "जिस इमारत में हुज़ूर ﷺ आराम फरमा रहे हैं उस इमारत को क्या कहते हैं?", a: "गुंबद ए ख़ज़रा शरीफ" },
+            { id: 38, q: "अज़ान कहने वाले को क्या कहते हैं?", a: "मुअज्ज़िन कहते हैं" },
+            { id: 39, q: "तकबीर पढ़ने वाले को क्या कहते हैं?", a: "मुकब्बिर कहते हैं" },
+            { id: 40, q: "नमाज़ ए मुंफ़रिद किसे कहते हैं?", a: "तनहा (अकेले) पढ़ी जाने वाली नमाज़ को कहते हैं" },
+            { id: 41, q: "नमाज़ ए बा जमाअत किसे कहते हैं?", a: "जो इमाम के पीछे पढ़ी जाती है" },
+            { id: 42, q: "खुतबा (जो जुम्मा में इमाम पढ़ता है) का सुनना कैसा है?", a: "वाजिब है" },
+            { id: 43, q: "सलाम करना क्या है?", a: "सुन्नत है" },
+            { id: 44, q: "सलाम का जवाब देना कैसा है?", a: "वाजिब है" },
+            { id: 45, q: "ऊंचाई पर चढ़ते वक्त क्या पढ़ना चाहिए?", a: "अल्लाहु अकबर" },
+            { id: 46, q: "नीचे उतरते वक्त क्या पढ़ना चाहिए?", a: "सुभान अल्लाह (سبحان اللہ)" },
+            { id: 47, q: "रोज़ेदारों के लिए जन्नत में खास दरवाज़े का नाम?", a: "रैयान" },
+            { id: 48, q: "रोज़ा रखना क्या है?", a: "फ़र्ज़" },
+            { id: 49, q: "जुमुआ में कितनी रकअत फ़र्ज़ हैं?", a: "2 रकअत" },
+            { id: 50, q: "नमाज़ के फ़राइज़ कितने हैं?", a: "7" },
+            { id: 51, q: "कुरआन शरीफ की कौनसी सूरत सबसे बड़ी है?", a: "सूरह अल बकरा" },
+            { id: 52, q: "कुरआन शरीफ में कुल कितनी सूरतें हैं?", a: "114 सूरतें" },
+            { id: 53, q: "सूरह फातेहा में कितनी आयतें हैं?", a: "7 आयतें" },
+            { id: 54, q: "हुज़ूर ए पाक ﷺ मक्का शरीफ में कितने साल रहे?", a: "53 साल" },
+            { id: 55, q: "हुज़ूर ए पाक ﷺ मदीना शरीफ में ज़ाहिरी तौर पर कितने साल रहे?", a: "10 साल" },
+            { id: 56, q: "अल्लाह तआला के लिए ऊपर वाला कहना कैसा है?", a: "जायज़ नहीं" },
+            { id: 57, q: "अल्लाह तआला को अल्लाह मियां कहना कैसा है?", a: "जायज़ नहीं" },
+            { id: 58, q: "तमाम सहाबा में सबसे बड़ा मर्तबा किस सहाबी का है?", a: "हज़रत अबू बक्र रदीयल्लाहु तआला अन्हु का" },
+            { id: 59, q: "इस्लाम की सबसे पहली जंग कौनसी हुई?", a: "जंग ए बद्र" },
+            { id: 60, q: "इस्लाम की दूसरी सबसे बड़ी जंग कौनसी हुई?", a: "जंग ए ओहद" }
+        ];
+
+        // Duas
+        const JUNIOR_DUAS = [
+            { title: "1. खाना खाने से पहले की दुआ", text: "بِسْمِ اللَّهِ وَعَلَى بَرَكَةِ اللَّهِ", trans: "अल्लाह के नाम के साथ और अल्लाह की बरकत पर (खाना शुरू करता हूँ)।" },
+            { title: "2. खाना खाने के बाद की दुआ", text: "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مِنَ الْمُسْلِمِينَ", trans: "तमाम तारीफें अल्लाह के लिए हैं जिसने हमें खिलाया, पिलाया और मुसलमानों में से बनाया।" },
+            { title: "3. रात को सोने से पहले की दुआ", text: "اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا", trans: "ऐ अल्लाह! मैं तेरे नाम के साथ मरता (सोता) हूँ और जीता (जागता) हूँ।" },
+            { title: "4. सुबह उठने के बाद की दुआ", text: "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ", trans: "सब तारीफें उस अल्लाह के लिए जिसने हमें मौत (नींद) के बाद ज़िन्दगी दी और उसी की तरफ लौटना है।" },
+            { title: "5. बैतूल ख़ला (टॉयलेट) जाने से पहले की दुआ", text: "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ", trans: "ऐ अल्लाह! मैं खबीस जिन्नों और जिन्नीयत से तेरी पनाह चाहता हूँ।" },
+            { title: "6. बैतूल ख़ला से बाहर आने की दुआ", text: "غُفْرَانَكَ ، الْحَمْدُ لِلَّهِ الَّذِي أَذْهَبَ عَنِّي الأَذَى وَعَافَانِي", trans: "ऐ अल्लाह! तेरी मगफिरत चाहता हूँ। सब तारीफें उस अल्लाह के लिए जिसने मुझसे तकलीफदेह चीज़ दूर की और मुझे आफियत दी।" },
+            { title: "7. सुरमा लगाने की नीयत / दुआ", text: "اللَّهُمَّ مَتِّعْنِي بِسَمْعِي، وَبَصَرِي" }
+        ];
+
+        // 50 MCQs for Senior & Super Senior
+        const SENIOR_MCQS = [
+            { id: 1, q: "तौरात शरीफ किस पैगम्बर पर नाज़िल हुई?", opts: ["हज़रत दाऊद अलैहिस्सलाम", "हज़रत मूसा अलैहिस्सलाम", "हज़रत ईसा अलैहिस्सलाम", "इनमें से कोई नहीं"], ans: 1 },
+            { id: 2, q: "जन्नत के कितने दरवाज़े हैं?", opts: ["7", "8", "5", "6"], ans: 1 },
+            { id: 3, q: "सुन्नत-ए-मुअक्कदा किन नमाज़ों में है?", opts: ["फ़र्ज़, मग़रिब, ईशा", "फ़र्ज़, अस्र, मग़रिब", "फ़र्ज़, ज़ुहर, मग़रिब", "फ़र्ज़, अस्र, ईशा"], ans: 2 },
+            { id: 4, q: "इस्लामी 10वें महीने का नाम क्या है?", opts: ["मुहर्रम", "रजब", "ज़िल क़ादा", "शव्वाल"], ans: 3 },
+            { id: 5, q: "हमारे आका ﷺ ने नबुव्वत का इज़हार कितनी उम्र में किया?", opts: ["10 साल", "12 साल", "40 साल", "60 साल"], ans: 2 },
+            { id: 6, q: "खुतबा (जो जुम्मा में इमाम पढ़ता है) का सुनना कैसा है?", opts: ["सुन्नत", "फ़र्ज़", "वाज़िब", "इनमें से कोई नहीं"], ans: 2 },
+            { id: 7, q: "वही (وحی) अल्लाह के नबियों तक पहुंचाने का काम किस फरिश्ते के ज़िम्मे है?", opts: ["हज़रत जिब्राइल अलैहिस्सलाम", "हज़रत मिकाईल अलैहिस्सलाम", "हज़रत इज़राईल अलैहिस्सलाम", "हज़रत इस्राफील अलैहिस्सलाम"], ans: 0 },
+            { id: 8, q: "लोगों की रूह कब्ज़ करना किस फरिश्ते का काम है?", opts: ["हज़रत जिब्राइल अलैहिस्सलाम", "हज़रत मिकाईल अलैहिस्सलाम", "हज़रत इज़राईल अलैहिस्सलाम", "हज़रत इस्राफील अलैहिस्सलाम"], ans: 2 },
+            { id: 9, q: "ऐसे नबी जिन्हें सबसे पहले काफिरों पर भेजा गया?", opts: ["हज़रत नूह अलैहिस्सलाम", "हज़रत इब्राहिम अलैहिस्सलाम", "हज़रत आदम अलैहिस्सलाम", "हज़रत ईसा अलैहिस्सलाम"], ans: 0 },
+            { id: 10, q: "अलैहिस्सलाम किन के लिए इस्तेमाल होता है?", opts: ["सिर्फ सभी नबियों के लिए", "सिर्फ सभी फरिश्तों के लिए", "नबियों और फरिश्तों दोनों के लिए खास है", "सभी सहाबा के लिए"], ans: 2 },
+            { id: 11, q: "जन्नत के दरवाज़े पर जो फरिश्ते हैं उनका नाम?", opts: ["हज़रत रिज़वान अलैहिस्सलाम", "हज़रत मालिक अलैहिस्सलाम", "हज़रत जिब्राइल अलैहिस्सलाम", "हज़रत मिकाईल अलैहिस्सलाम"], ans: 0 },
+            { id: 12, q: "हज़रत आमिना रज़ीयल्लाहु तआला अन्हा का जब विसाल हुआ तो उस वक्त हमारे आका ﷺ की उम्र कितनी थी?", opts: ["4 साल", "6 साल", "8 साल", "12 साल"], ans: 1 },
+            { id: 13, q: "हज़रत अब्दुल मुत्तलिब रज़ीयल्लाहु तआला अन्हु का जब विसाल हुआ तब हमारे आका ﷺ की उम्र कितनी थी?", opts: ["6 साल", "8 साल", "10 साल", "25 साल"], ans: 1 },
+            { id: 14, q: "जब हज़रत खदीजा रज़ीयल्लाहु तआला अन्हा से हुजूर ﷺ का निकाह हुआ तब हुजूर ﷺ की उम्र कितनी थी?", opts: ["20 साल", "25 साल", "30 साल", "40 साल"], ans: 1 },
+            { id: 15, q: "शराइते नमाज़ कितने हैं?", opts: ["4", "5", "6", "7"], ans: 2 },
+            { id: 16, q: "तमाम नमाज़ों में कौनसी नमाज़ें इमाम के पीछे पढ़ी जाती हैं?", opts: ["सुन्नत नमाज़ें", "फ़र्ज़ नमाज़ें", "नफ़्ल नमाज़ें", "वित्र नमाज़ें"], ans: 1 },
+            { id: 17, q: "हुज़ूर ﷺ मदीना शरीफ़ आए तो सबसे पहले किसके घर पर ठहरे?", opts: ["हज़रत अबू बक्र सिद्दीक़", "हज़रत उमर फ़ारूक़", "अबू अय्यूब अंसारी रदीयल्लाहु अन्हु", "हज़रत उस्मान गनी"], ans: 2 },
+            { id: 18, q: "जिस इमाम की हम तकलीद करते हैं उस इमाम का नाम क्या है?", opts: ["हज़रत इमाम शाफ़ई", "हज़रत इमाम मालिक", "हज़रत इमाम अहमद बिन हम्बल", "हज़रत इमाम ए आज़म अबू हनीफ़ा"], ans: 3 },
+            { id: 19, q: "हज़रत इमाम ए आज़म अबू हनीफ़ा का पूरा नाम क्या है?", opts: ["हज़रत नोमान बिन साबित", "हज़रत मालिक", "हज़रत अनस", "हज़रत अहमद बिन हम्बल"], ans: 0 },
+            { id: 20, q: "सफ़ा और मरवा की पहाड़ी पर सबसे पहले किसने दौड़ लगाई?", opts: ["हज़रत ए आयशा", "हज़रत ए हाजरा रदीयल्लाहु अन्हा", "हज़रत ए ख़दीजा", "हज़रत ए फ़ातिमा"], ans: 1 },
+            { id: 21, q: "नमाज़ ए फ़राइज़ के कुल कितने अर्कान/नाम हैं?", opts: ["5", "6", "7", "8"], ans: 2 },
+            { id: 22, q: "नमाज़ की शर्तें कितनी हैं?", opts: ["4", "5", "6", "8"], ans: 2 },
+            { id: 23, q: "दुखती हुई आंख से निकलने वाले पानी से वूज़ू टूट जाता है या नहीं?", opts: ["टूट जाता है", "नहीं टूटता", "सिर्फ वूज़ू मकरूह होता है", "इनमें से कोई नहीं"], ans: 0 },
+            { id: 24, q: "हुज़ूर ए पाक ﷺ मक्का शरीफ़ में कितने साल रहे?", opts: ["50 साल", "53 साल", "60 साल", "63 साल"], ans: 1 },
+            { id: 25, q: "तमाम सहाबा में सबसे बड़ा मर्तबा किस सहाबी का है?", opts: ["हज़रत उमर", "हज़रत उस्मान", "हज़रत अबू बक्र सिद्दीक", "हज़रत अली"], ans: 2 },
+            { id: 26, q: "नमाज़ में हाथ बांध कर खड़े होने को क्या कहा जाता है?", opts: ["कयाम", "रुकू", "सजदा", "जलसा"], ans: 0 },
+            { id: 27, q: "नमाज़ में दोनों सजदों के दरमियान बैठना क्या कहलाता है?", opts: ["कयाम", "रुकू", "जलसा", "काअदा"], ans: 2 },
+            { id: 28, q: "हुजूर ﷺ के कितने साहबज़ादे और कितनी साहबज़ादियें थीं?", opts: ["2 साहबज़ादे और 4 साहबज़ादियें", "3 साहबज़ादे और 4 साहबज़ादियें", "4 साहबज़ादे और 3 साहबज़ादियें", "3 साहबज़ादे और 3 साहबज़ादियें"], ans: 1 },
+            { id: 29, q: "तयम्मुम में कितने फ़र्ज़ हैं?", opts: ["2", "3", "4", "5"], ans: 1 },
+            { id: 30, q: "हज कब फ़र्ज़ हुआ?", opts: ["सन 8 हिजरी में", "सन 9 हिजरी में", "सन 10 हिजरी में", "सन 11 हिजरी में"], ans: 1 },
+            { id: 31, q: "दुनिया का सबसे पहले क़त्ल किसने किया?", opts: ["हाबील ने", "क़ाबील ने", "नमरूद ने", "फ़िरऔन ने"], ans: 1 },
+            { id: 32, q: "वूज़ू से पहले बिस्मिल्लाह कहना क्या है?", opts: ["फ़र्ज़", "वाजिब", "सुन्नत", "मुस्तहब"], ans: 2 },
+            { id: 33, q: "क़याम का क्या मतलब है?", opts: ["नमाज़ में झुकना", "नमाज़ में सजदा करना", "नमाज़ में खड़े रहना", "नमाज़ में बैठना"], ans: 2 },
+            { id: 34, q: "नमाज़ में तशहहुद (अत्तहीय्यात) पढ़ना क्या है?", opts: ["फ़र्ज़", "वाजिब", "सुन्नत", "नफ़्ल"], ans: 1 },
+            { id: 35, q: "जंग ए बद्र में कितने सहाबा मौजूद थे?", opts: ["313", "70", "1000", "1400"], ans: 0 },
+            { id: 36, q: "सरकार ﷺ को सबसे पहले किसने दूध पिलाया?", opts: ["हज़रत हलीमा सादिया", "हज़रत सुवैबा रदीयल्लाहु तआला अन्हा", "हज़रत आमना", "हज़रत फ़ातिमा"], ans: 1 },
+            { id: 37, q: "दज्जाल के फ़ितने से बचने के लिए (कौन सी) सूरत पढ़नी चाहिए?", opts: ["सुरह यासीन", "सुरह रहमान", "सुरह कहफ़", "सुरह मुल्क"], ans: 2 },
+            { id: 38, q: "पांच महीनों के नाम जिनका चांद देखना हम सब पर वाजिब है?", opts: ["शाबान, रमज़ान, शव्वाल, ज़िल क़ादा, ज़िल हिज्जा", "मुहर्रम, सफ़र, रबीउल अव्वल, रबीउल आख़िर, रमज़ान", "शाबान, रमज़ान, रजब, मुहर्रम, ज़िल हिज्जा", "रमज़ान, शव्वाल, रजब, शाबान, सफ़र"], ans: 0 },
+            { id: 39, q: "सरकार ﷺ के साहबज़ादे, हज़रत इब्राहिम रदीयल्लाहु अन्हु किनसे पैदा हुए?", opts: ["हज़रत ख़दीजा", "हज़रत मारिया किब्तिया रदीयल्लाहु अन्हा", "हज़रत आयशा", "हज़रत ज़ैनब"], ans: 1 },
+            { id: 40, q: "वोह सहाबी जिनका लक़ब ज़ुन्नूरैन है?", opts: ["हज़रत अबू बक्र सिद्दीक़", "हज़रत उस्मान ए गनी रदीयल्लाहु अन्हु", "हज़रत उमर फ़ारूक़", "हज़रत अली"], ans: 1 },
+            { id: 41, q: "कब्र में मुर्दों से कितने सवाल होंगे?", opts: ["2 सवाल", "3 सवाल", "4 सवाल", "5 सवाल"], ans: 1 },
+            { id: 42, q: "गारे हीरा में हुज़ूर ए पाक ﷺ के साथ कौनसे सहाबी मौजूद थे?", opts: ["हज़रत अबू बक्र सिद्दीक़ रदीयल्लाहु तआला अन्हु", "हज़रत उस्मान ए गनी", "हज़रत उमर फ़ारूक़", "हज़रत अली"], ans: 0 },
+            { id: 43, q: "अल्लाह तआला ने सबसे पहले इस दुनिया में किस नबी को भेजा?", opts: ["हज़रत इब्राहीम अलैहिस्सलाम", "हज़रत मूसा अलैहिस्सलाम", "हज़रत आदम अलैहिस्सलाम", "हज़रत ईसा अलैहिस्सलाम"], ans: 2 },
+            { id: 44, q: "हज़रत आदम अलैहिस्सलाम की ज़ौजा (बीबी) का नाम क्या है?", opts: ["हज़रत मरयम", "हज़रत हव्वा रदीयल्लाहु तआला अन्हा", "हज़रत ख़दीजा", "हज़रत आयशा"], ans: 1 },
+            { id: 45, q: "हुज़ूर ए पाक ﷺ ने किस शहर से हिजरत की?", opts: ["मदीना शरीफ से", "मक़्क़ा शरीफ से", "ताएफ से", "यमन से"], ans: 1 },
+            { id: 46, q: "अज़ान कहने वाले को क्या कहते हैं?", opts: ["मुक़ब्बिर", "मुअज़्ज़िन", "इमाम", "ख़तीब"], ans: 1 },
+            { id: 47, q: "कंधों पर बैठे हुए फ़रिश्तों के नाम क्या हैं?", opts: ["हज़रत मुनकर-नकीर", "हज़रत जिब्रील व मीकाईल", "हज़रत किरामन कातिबीन अलैहिमुस्सलाम", "हज़रत इस्राफील व इज़राईल"], ans: 2 },
+            { id: 48, q: "सुन्नत ए गैर मुअक्कदा किन नमाज़ों में है?", opts: ["फज्र, ज़ुहर, मगरिब", "अस्र, ईशा", "फज्र, अस्र", "ज़ुहर, ईशा"], ans: 1 },
+            { id: 49, q: "तकबीर पढ़ने वाले को क्या कहते हैं?", opts: ["मुअज़्ज़िन", "मुक़ब्बिर", "हाफिज", "कारी"], ans: 1 },
+            { id: 50, q: "कब्र में आने वाले फ़रिश्तों के नाम क्या हैं?", opts: ["हज़रत किरामन कातिबीन", "हज़रत मुनकर नकीर अलैहिमुस्सलाम", "हज़रत रिज़वान", "हज़रत मालिक"], ans: 1 }
+        ];
+
+        // Column Matching Pairs (15 Items)
+        const MATCH_DATA = [
+            { id: 1, q: "1. जंग ए बद्र कब हुई?", options: ["(H) 17 रमज़ान", "(K) 07 शव्वाल", "(B) 09 हिजरी को", "(L) इकलीमा", "(F) लिवा"], correctIndex: 0 },
+            { id: 2, q: "2. जंग ए उहद कब हुई?", options: ["(K) 07 शव्वाल", "(H) 17 रमज़ान", "(B) 09 हिजरी को", "(C) हज़रत आमीना"], correctIndex: 0 },
+            { id: 3, q: "3. हज कब फ़र्ज़ हुआ?", options: ["(B) 09 हिजरी को", "(A) हज़रत ईसा अलैहिस्सलाम", "(E) हज़रत अब्दुल्लाह", "(H) 17 रमज़ान"], correctIndex: 0 },
+            { id: 4, q: "4. क़ाबिल के साथ कौनसी लड़की पैदा हुई?", options: ["(L) इकलीमा", "(F) लिवा", "(D) हज़रत सलमा", "(I) हज़रत बर्राह"], correctIndex: 0 },
+            { id: 5, q: "5. हाबिल के साथ कौनसी लड़की पैदा हुई?", options: ["(F) लिवा", "(L) इकलीमा", "(N) हज़रत फातिमा बिन्ते उमर", "(J) हज़रत हाजरा"], correctIndex: 0 },
+            { id: 6, q: "6. हुज़ूर ﷺ के वालिद का नाम?", options: ["(E) हज़रत अब्दुल्लाह रदीयल्लाहु अन्हु", "(G) हज़रत अब्दुल मुतलिब", "(M) हज़रत हाशिम", "(O) हज़रत वहब"], correctIndex: 0 },
+            { id: 7, q: "7. हुज़ूर ﷺ की वालिदा का नाम?", options: ["(C) हज़रत आमीना रदीयल्लाहु अन्हा", "(D) हज़रत सलमा", "(I) हज़रत बर्राह", "(J) हज़रत हाजरा"], correctIndex: 0 },
+            { id: 8, q: "8. हुज़ूर ﷺ के दादा का नाम क्या है?", options: ["(G) हज़रत अब्दुल मुतलिब रदीयल्लाहु अन्हु", "(M) हज़रत हाशिम", "(E) हज़रत अब्दुल्लाह", "(O) हज़रत वहब"], correctIndex: 0 },
+            { id: 9, q: "9. हुज़ूर ﷺ की दादी का नाम क्या है?", options: ["(N) हज़रत फातिमा बिन्ते उमर", "(D) हज़रत सलमा", "(I) हज़रत बर्राह", "(C) हज़रत आमीना"], correctIndex: 0 },
+            { id: 10, q: "10. हुज़ूर ﷺ के परदादा का नाम क्या है?", options: ["(M) हज़रत हाशिम रदीयल्लाहु अन्हु", "(G) हज़रत अब्दुल मुतलिब", "(E) हज़रत अब्दुल्लाह", "(O) हज़रत वहब"], correctIndex: 0 },
+            { id: 11, q: "11. हुज़ूर ﷺ की परदादी का नाम क्या है?", options: ["(D) हज़रत सलमा रदीयल्लाहु अन्हा", "(N) हज़रत फातिमा बिन्ते उमर", "(I) हज़रत बर्राह", "(J) हज़रत हाजरा"], correctIndex: 0 },
+            { id: 12, q: "12. हुज़ूर ﷺ के नाना का नाम क्या है?", options: ["(O) हज़रत वहब रदीयल्लाहु अन्हु", "(M) हज़रत हाशिम", "(E) हज़रत अब्दुल्लाह", "(G) हज़रत अब्दुल मुतलिब"], correctIndex: 0 },
+            { id: 13, q: "13. हुज़ूर ﷺ की नानी का नाम क्या है?", options: ["(I) हज़रत बर्राह रदीयल्लाहु अन्हा", "(D) हज़रत सलमा", "(N) हज़रत फातिमा बिन्ते उमर", "(C) हज़रत आमीना"], correctIndex: 0 },
+            { id: 14, q: "14. सफा और मरवा की पहाड़ी पर सबसे पहले किसने दौड़ लगाई?", options: ["(J) हज़रत हाजरा रदीयल्लाहु अन्हा", "(D) हज़रत सलमा", "(L) इकलीमा", "(F) लिवा"], correctIndex: 0 },
+            { id: 15, q: "15. दज्जाल के फ़ितने को कौनसे नबी खत्म करेंगे?", options: ["(A) हज़रत ईसा अलैहिस्सलाम", "(E) हज़रत अब्दुल्लाह", "(M) हज़रत हाशिम", "(G) हज़रत अब्दुल मुतलिब"], correctIndex: 0 }
+        ];
+
+        // Senior Short Answer Questions (10)
+        const SENIOR_SHORT_QS = [
+            { id: 1, q: "कुरान शरीफ में सूरतों की और मंजिलों की तादाद कितनी है?", modelAns: "कुरान शरीफ में कुल 114 सूरतें और 7 मंज़िलें हैं।" },
+            { id: 2, q: "हज़रत उस्मान गनी (रज़ि.) की दोनों बीवियों के नाम बताओ (तरतीब के साथ)?", modelAns: "1. हज़रत रुकैया (रज़ि.) 2. हज़रत उम्मे कुलसूम (रज़ि.) (दोनों नबी ﷺ की साहबज़ादियाँ थीं)।" },
+            { id: 3, q: "ग़ज़वा किसे कहते हैं? इस्लाम में कितने ग़ज़वात हुए?", modelAns: "जिस जंग में हुज़ूर ﷺ ने खुद शिरकत (हिस्सा) फरमाई उसे ग़ज़वा कहते हैं। कुल 27 ग़ज़वात हुए।" },
+            { id: 4, q: "शक्के-सद्र किसे कहते हैं? रसूल पाक ﷺ का शक्के-सद्र कितनी दफा हुआ?", modelAns: "शक्के-सद्र का मतलब हुज़ूर ﷺ के सीना-ए-अक़दस का चीरा जाना और दिल-ए-मुबारक को ज़मज़म से धोना। यह 4 बार हुआ।" },
+            { id: 5, q: "नमाज़ के शराईत और फराइज़ बताओ।", modelAns: "नमाज़ की शर्तें (शराइत): 6 हैं। नमाज़ के अरकान (फ़राइज़): 7 हैं।" },
+            { id: 6, q: "इस्लाम के खुल्फा-ए-राशिदीन किसे कहते हैं? तरतीब से लिखो।", modelAns: "1. हज़रत अबू बक्र सिद्दीक़ 2. हज़रत उमर फ़ारूक़ 3. हज़रत उस्मान ए गनी 4. हज़रत मौला अली (रज़ि.)।" },
+            { id: 7, q: "किन महीनों का चांद देखना वाजिब है?", modelAns: "5 महीनों का: शाबान, रमज़ान, शव्वाल, ज़िल क़ादा, ज़िल हिज्जा।" },
+            { id: 8, q: "हुज़ूर साहिब ए लोलाक ﷺ के औलाद ओ अमजद का ज़िक्र करो।", modelAns: "3 साहबज़ादे (हज़रत कासिम, हज़रत अब्दुल्लाह, हज़रत इब्राहिम) और 4 साहबज़ादियाँ (हज़रत ज़ैनब, हज़रत रुकैया, हज़रत उम्मे कुलसूम, हज़रत फ़ातिमा)।" },
+            { id: 9, q: "अफज़ल उल बशर बाद अज़ अंबिया किसे कहते हैं?", modelAns: "अम्बिया अलैहिस्सलाम के बाद तमाम इंसानों में सबसे अफज़ल हज़रत अबू बक्र सिद्दीक़ (रज़ि.) हैं।" },
+            { id: 10, q: "नजासत-ए-ग़लीज़ा व खफीफा किसे कहते हैं?", modelAns: "ग़लीज़ा: गाढ़ी/सख्त नजासत (जैसे पेशाब, पाख़ाना)। ख़फ़ीफ़ा: हल्की नजासत (जैसे हलाल जानवरों का पेशाब)।" }
+        ];
+
+        // Super Senior Short Questions (10)
+        const SUPER_SHORT_QS = [
+            { id: 1, q: "कुफ्र और ईमान किसे कहते हैं?", modelAns: "ईमान: हुज़ूर ﷺ की लाई हुई तमाम बातों पर दिल से तस्दीक करना। कुफ्र: अल्लाह या उसके रसूल की किसी ज़रूरी बात का इंकार करना।" },
+            { id: 2, q: "शिर्क किसे कहते हैं?", modelAns: "अल्लाह तआला की ज़ात या सिफात में किसी को शरीक ठहराना शिर्क कहलाता है।" },
+            { id: 3, q: "मोजज़ा ओर करामात किसे कहते हैं?", modelAns: "नबी के हाथ से ज़ाहिर होने वाला ख़ारिक-ए-आदत (असामान्य) काम 'मोजज़ा' है और वली के हाथ से ज़ाहिर होने वाला 'करामात' है।" },
+            { id: 4, q: "आलम ए बरज़ख किसे कहते हैं?", modelAns: "मौत से लेकर क़यामत तक के दरमियानी वक़्त या दुनिया और आख़िरत के बीच का आलम बरज़ख कहलाता है।" },
+            { id: 5, q: "ऐसे कौन कौन से नबी हैं जिन्हें अब तक मौत न आई?", modelAns: "हज़रत ईसा अलैहिस्सलाम, हज़रत इद्रीस अलैहिस्सलाम, हज़रत ख़िज़र अलैहिस्सलाम और हज़रत इलयास अलैहिस्सलाम।" },
+            { id: 6, q: "खिलाफत ए राशिदा की कुल मुद्दत कितनी है?", modelAns: "30 साल (30 Years)।" },
+            { id: 7, q: "शेख़ैन करीमैन से क्या मुराद है?", modelAns: "हज़रत अबू बक्र सिद्दीक़ और हज़रत उमर फ़ारूक़ (रदीयल्लाहु तआला अन्हुमा)।" },
+            { id: 8, q: "किन चार इमामों की तकलीद वाजिब है?", modelAns: "1. इमाम ए आज़म अबू हनीफ़ा 2. इमाम शाफ़ई 3. इमाम मालिक 4. इमाम अहमद बिन हम्बल।" },
+            { id: 9, q: "मीज़ान और लिवा उल हम्द से क्या मुराद है?", modelAns: "मीज़ान: क़यामत में आमाल तौलने की तराज़ू। लिवा उल हम्द: हुज़ूर ﷺ का खास परचम/झंडा।" },
+            { id: 10, q: "सजद ए सह्व किसे कहते हैं?", modelAns: "नमाज़ में भूल से वाजिब छूट जाने पर आख़िरी काअदा में सलाम फेरकर किए जाने वाले दो अतिरिक्त सजदे।" }
+        ];
+
+        // Super Senior Long Descriptive Questions (10 items x 2.5 marks = 25)
+        const SUPER_LONG_QS = [
+            { id: 1, q: "1. क़ुरआन पाक में मक्की और मदनी सूरतें कितनी हैं?, मंज़िल और सूरतों की कुल तादाद बयान करें।", modelAns: "कुल सूरतें: 114। मक्की सूरतें: 86, मदनी सूरतें: 28। कुल मंज़िले: 7। कुल पारे: 30।" },
+            { id: 2, q: "2. वह कौन-से सहाबी हैं जिनके निकाह में नबी ﷺ की दो बेटियाँ आईं? उनकी तारीख़-ए-शहादत और दोनों अज़वाज के अस्मा-ए-मुक़द्दसा तरतीब से लिखें।", modelAns: "हज़रत उस्मान ए गनी (ज़ुन्नूरैन)। अज़वाज: 1. हज़रत रुकैया 2. हज़रत उम्मे कुलसूम। शहादत: 18 ज़िल हिज्जा 35 हिजरी।" },
+            { id: 3, q: "3. ग़ज़वा से क्या मुराद है? इस्लाम में कितने ग़ज़वात हुए?", modelAns: "ग़ज़वा उस जंग को कहते हैं जिसमें हुज़ूर ﷺ ने खुद हिस्सा लिया। इस्लाम में कुल 27 ग़ज़वात हुए।" },
+            { id: 4, q: "4. रसूल पाक ﷺ का शक्क-ए-सदर कितनी मर्तबा कहां-कहां हुआ?", modelAns: "कुल 4 बार हुआ: 1. बचपन में हलीमा सादिया के यहाँ, 2. 10 साल की उम्र में, 3. गारे हीरा में नबुव्वत के वक्त, 4. शबे मेअराज।" },
+            { id: 5, q: "5. नमाज़ के शराइत, फ़राइज़ मआ तरतीब बताएं।", modelAns: "शराइत (6): तहारत, कपड़ा पाक, जगह पाक, सतर-ए-औरत, वक़्त, किबला रुख। फ़राइज़/अर्कान (7): तक्बीरे तहरीमा, क़याम, क़िराअत, रुकू, सजदा, काअदा-ए-अख़ीरा, ख़ुरूज बि सुनिहि।" },
+            { id: 6, q: "6. तरतीब-ए-ख़िलाफ़त, इमामत और विलायत बयान करें।", modelAns: "ख़िलाफ़त तरतीब: अबू बक्र -> उमर -> उस्मान -> अली (रज़ि.)। इमामत व विलायत के इमाम मौला अली व अहले बैत।" },
+            { id: 7, q: "7. इस्लामी महीनों के नाम बयान करें। और किन-किन महीनों के चाँद को देखना वाजिब क़रार दिया गया, बताएं।", modelAns: "12 महीने: मुहर्रम, सफ़र, रबीउल अव्वल, रबीउल आख़िर, जमादियुल अव्वल, जमादियुल आख़िर, रजब, शाबान, रमज़ान, शव्वाल, ज़िल क़ादा, ज़िल हिज्जा। चांद देखना वाजिब: शाबान, रमज़ान, शव्वाल, ज़िल क़ादा, ज़िल हिज्जा।" },
+            { id: 8, q: "8. हुज़ूर सल्लल्लाहु अलैहि वसल्लम की औलाद-ए-अमजाद का तज़किरा फ़रमाएं। साथ ही यह बताएं कि कौन-कौन किस अज़वाज के बत्न-ए-अक़दस से हैं।", modelAns: "हज़रत ख़दीजा से: कासिम, अब्दुल्लाह, ज़ैनब, रुकैया, उम्मे कुलसूम, फ़ातिमा। हज़रत मारिया किब्तिया से: हज़रत इब्राहिम।" },
+            { id: 9, q: "9. नजासत-ए-ग़लीज़ा और नजासत-ए-ख़फ़ीफ़ा क्या-क्या हैं और इन्हें पाक करने का तरीक़ा बयान करें।", modelAns: "ग़लीज़ा: सख्त नजासत (3 बार धोना और निचोड़ना)। ख़फ़ीफ़ा: हल्की नजासत (कपड़े के एक चौथाई हिस्से पर बहते पानी से धोना)।" },
+            { id: 10, q: "10. मुन्दरजा-ज़ैल अलक़ाब किन-किन के हैं?\n(अ) ग़सील-उल-मलाइका\n(ब) ज़ुन-नूरैन\n(स) बाब-उल-इल्म\n(द) अफ़ज़ल-उल-बशर बाद अज़ अम्बिया\n(इ) फ़ातिह-ए-अक़सा\n(फ) अअ्दिल-उल-अस्हाब", modelAns: "(अ) हज़रत हंजला (ब) हज़रत उस्मान (स) हज़रत अली (द) हज़रत अबू बक्र (इ) हज़रत उमर फ़ारूक़ (फ) हज़रत उमर बिन अब्दुल अज़ीज़ / हज़रत उमर।" }
+        ];
+
+
+        /* -------------------------------------------------------------
+           APPLICATION STATE & VARIABLES
+        ------------------------------------------------------------- */
+        let currentCategory = 'junior'; // 'junior', 'senior', 'supersenior'
+        let currentJuniorIdx = 0;
+        let isJuniorAnsVisible = false;
+        
+        // Audio Toggle
+        let soundEnabled = true;
+
+        // KBC State
+        let currentKbcIdx = 0;
+        let kbcScore = 0;
+        let kbcTimer = null;
+        let kbcTimeLeft = 30;
+        let lifelines = { '5050': true, 'poll': true, 'skip': true };
+
+        // Matching State
+        let matchAnswers = {}; // { qId: selectedOptIndex }
+
+        // Short / Long Self Grades
+        let shortScores = {};
+        let longScores = {};
+
+
+        /* -------------------------------------------------------------
+           AUDIO SYNTHESIZER (WEB AUDIO API - NO EXTERNAL DEPENDENCY)
+        ------------------------------------------------------------- */
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playSound(type) {
+            if (!soundEnabled) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                if (type === 'correct') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                    osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.3); // A5
+                    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                } else if (type === 'wrong') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(110, audioCtx.currentTime + 0.4);
+                    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.4);
+                } else if (type === 'click') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.05);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.05);
+                } else if (type === 'lock') {
+                    osc.type = 'square';
+                    osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.2);
+                }
+            } catch (e) {}
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('soundIcon').className = soundEnabled ? "fa-solid fa-volume-high text-lg" : "fa-solid fa-volume-xmark text-lg text-red-400";
+        }
+
+
+        /* -------------------------------------------------------------
+           CATEGORY SELECTION & LAYOUT HANDLERS
+        ------------------------------------------------------------- */
+        function selectCategory(cat) {
+            playSound('click');
+            currentCategory = cat;
+
+            // Highlight Active Category Button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('border-amber-400', 'bg-amber-500', 'text-slate-950');
+                btn.classList.add('border-amber-500/40', 'bg-slate-900/80', 'text-amber-300');
+            });
+            const activeBtn = document.getElementById(`catBtn-${cat}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-amber-500/40', 'bg-slate-900/80', 'text-amber-300');
+                activeBtn.classList.add('border-amber-400', 'bg-amber-500', 'text-slate-950');
+            }
+
+            // Hide/Show Appropriate Containers
+            const juniorView = document.getElementById('juniorView');
+            const examWorkspace = document.getElementById('examWorkspace');
+
+            if (cat === 'junior') {
+                juniorView.classList.remove('hidden');
+                examWorkspace.classList.add('hidden');
+                renderJuniorQ();
+                renderJuniorDuas();
+                renderJuniorFullList();
+            } else {
+                juniorView.classList.add('hidden');
+                examWorkspace.classList.remove('hidden');
+
+                // Update Title
+                document.getElementById('currentCategoryTitle').innerText = cat === 'senior' ? "Senior Exam Panel" : "Super Senior Exam Panel";
+
+                // Show/Hide Long Answer Tab (Only for Super Senior)
+                const tabLongBtn = document.getElementById('tabLongBtn');
+                if (cat === 'supersenior') {
+                    tabLongBtn.classList.remove('hidden');
+                } else {
+                    tabLongBtn.classList.add('hidden');
+                }
+
+                // Reset and Initialize KBC & Questions
+                initKbcQuiz();
+                renderMatchingQuestions();
+                renderShortQuestions();
+                if (cat === 'supersenior') renderLongQuestions();
+                switchExamTab('mcq');
+            }
+        }
+
+
+        /* -------------------------------------------------------------
+           JUNIOR CATEGORY LOGIC
+        ------------------------------------------------------------- */
+        function renderJuniorQ() {
+            const q = JUNIOR_QA[currentJuniorIdx];
+            document.getElementById('juniorCounter').innerText = `प्रश्न ${currentJuniorIdx + 1} / ${JUNIOR_QA.length}`;
+            document.getElementById('juniorQuestionText').innerText = `Q.${q.id} ${q.q}`;
+            document.getElementById('juniorAnswerContainer').innerText = `उत्तर: ${q.a}`;
+            document.getElementById('juniorAnswerContainer').classList.add('hidden');
+            document.getElementById('revealAnsBtn').innerHTML = `<i class="fa-solid fa-eye mr-2"></i> उत्तर देखें`;
+            isJuniorAnsVisible = false;
+        }
+
+        function toggleJuniorAnswer() {
+            playSound('click');
+            isJuniorAnsVisible = !isJuniorAnsVisible;
+            const ansBox = document.getElementById('juniorAnswerContainer');
+            const btn = document.getElementById('revealAnsBtn');
+            if (isJuniorAnsVisible) {
+                ansBox.classList.remove('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-eye-slash mr-2"></i> उत्तर छुपाएं`;
+            } else {
+                ansBox.classList.add('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-eye mr-2"></i> उत्तर देखें`;
+            }
+        }
+
+        function nextJuniorQ() {
+            if (currentJuniorIdx < JUNIOR_QA.length - 1) {
+                currentJuniorIdx++;
+                renderJuniorQ();
+            }
+        }
+
+        function prevJuniorQ() {
+            if (currentJuniorIdx > 0) {
+                currentJuniorIdx--;
+                renderJuniorQ();
+            }
+        }
+
+        function setJuniorTab(tab) {
+            playSound('click');
+            document.getElementById('juniorPracticeMode').classList.add('hidden');
+            document.getElementById('juniorDuasMode').classList.add('hidden');
+            document.getElementById('juniorQuizContainer').classList.add('hidden');
+
+            document.getElementById('jTabPract').className = "px-4 py-2 text-sm rounded-lg font-bold text-gray-300 hover:text-white transition";
+            document.getElementById('jTabDuas').className = "px-4 py-2 text-sm rounded-lg font-bold text-gray-300 hover:text-white transition";
+            document.getElementById('jTabQuiz').className = "px-4 py-2 text-sm rounded-lg font-bold text-gray-300 hover:text-white transition";
+
+            if (tab === 'practice') {
+                document.getElementById('juniorPracticeMode').classList.remove('hidden');
+                document.getElementById('jTabPract').className = "px-4 py-2 text-sm rounded-lg font-bold bg-amber-500 text-slate-950 transition";
+            } else if (tab === 'duas') {
+                document.getElementById('juniorDuasMode').classList.remove('hidden');
+                document.getElementById('jTabDuas').className = "px-4 py-2 text-sm rounded-lg font-bold bg-amber-500 text-slate-950 transition";
+            } else if (tab === 'quiz') {
+                document.getElementById('juniorQuizContainer').classList.remove('hidden');
+                document.getElementById('jTabQuiz').className = "px-4 py-2 text-sm rounded-lg font-bold bg-amber-500 text-slate-950 transition";
+            }
+        }
+
+        function renderJuniorDuas() {
+            const grid = document.getElementById('duasGrid');
+            grid.innerHTML = JUNIOR_DUAS.map(d => `
+                <div class="bg-slate-950 p-4 rounded-xl border border-amber-500/30">
+                    <h5 class="text-amber-400 font-bold mb-2">${d.title}</h5>
+                    <p class="font-arabic text-2xl text-emerald-300 text-right leading-loose mb-2" dir="rtl">${d.text}</p>
+                    <p class="text-xs text-gray-300 italic">${d.trans}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderJuniorFullList() {
+            const list = document.getElementById('juniorFullList');
+            list.innerHTML = JUNIOR_QA.map(q => `
+                <div class="p-3 bg-slate-900 rounded-lg border border-slate-800 text-sm">
+                    <p class="text-amber-300 font-bold">Q.${q.id} ${q.q}</p>
+                    <p class="text-emerald-300 mt-1">Ans. ${q.a}</p>
+                </div>
+            `).join('');
+        }
+
+
+        /* -------------------------------------------------------------
+           KBC MCQ ENGINE (SENIOR & SUPER SENIOR)
+        ------------------------------------------------------------- */
+        function initKbcQuiz() {
+            currentKbcIdx = 0;
+            kbcScore = 0;
+            lifelines = { '5050': true, 'poll': true, 'skip': true };
+            updateLifelineButtons();
+            loadKbcQuestion();
+        }
+
+        function loadKbcQuestion() {
+            clearInterval(kbcTimer);
+            const q = SENIOR_MCQS[currentKbcIdx];
+
+            document.getElementById('mcqProgressText').innerText = `${currentKbcIdx + 1} / ${SENIOR_MCQS.length}`;
+            document.getElementById('mcqScorePoints').innerText = `${kbcScore * 10} Points`;
+            document.getElementById('kbcQNum').innerText = currentKbcIdx + 1;
+            document.getElementById('kbcQuestionText').innerText = q.q;
+
+            // Render Options
+            const grid = document.getElementById('kbcOptionsGrid');
+            grid.innerHTML = q.opts.map((opt, idx) => `
+                <button onclick="handleKbcOptionClick(${idx})" id="kbcOpt-${idx}" class="kbc-option w-full py-4 px-6 bg-slate-900 border-2 border-amber-500/40 hover:border-amber-400 text-amber-200 font-bold text-left text-base md:text-lg flex items-center space-x-3 transition">
+                    <span class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">${String.fromCharCode(65 + idx)}</span>
+                    <span>${opt}</span>
+                </button>
+            `).join('');
+
+            document.getElementById('kbcNextBar').classList.add('hidden');
+
+            // Start 30s Timer
+            kbcTimeLeft = 30;
+            document.getElementById('timerDisplay').innerText = `${kbcTimeLeft} सेकण्ड`;
+            kbcTimer = setInterval(() => {
+                kbcTimeLeft--;
+                document.getElementById('timerDisplay').innerText = `${kbcTimeLeft} सेकण्ड`;
+                if (kbcTimeLeft <= 0) {
+                    clearInterval(kbcTimer);
+                    handleKbcTimeout();
+                }
+            }, 1000);
+        }
+
+        function handleKbcOptionClick(selectedIdx) {
+            clearInterval(kbcTimer);
+            playSound('lock');
+
+            const q = SENIOR_MCQS[currentKbcIdx];
+            const optBtns = document.querySelectorAll('.kbc-option');
+            optBtns.forEach(btn => btn.disabled = true);
+
+            const selectedBtn = document.getElementById(`kbcOpt-${selectedIdx}`);
+            selectedBtn.classList.remove('bg-slate-900', 'border-amber-500/40');
+            selectedBtn.classList.add('bg-amber-500', 'text-slate-950', 'kbc-glow-gold');
+
+            setTimeout(() => {
+                if (selectedIdx === q.ans) {
+                    playSound('correct');
+                    kbcScore++;
+                    selectedBtn.classList.remove('bg-amber-500', 'kbc-glow-gold');
+                    selectedBtn.classList.add('bg-emerald-600', 'text-white', 'kbc-glow-green');
+                    document.getElementById('kbcFeedbackText').className = "font-bold text-lg text-emerald-400";
+                    document.getElementById('kbcFeedbackText').innerText = "✓ सही जवाब! (Correct Answer)";
+                } else {
+                    playSound('wrong');
+                    selectedBtn.classList.remove('bg-amber-500', 'kbc-glow-gold');
+                    selectedBtn.classList.add('bg-red-600', 'text-white', 'kbc-glow-red');
+
+                    // Highlight Correct Option
+                    const correctBtn = document.getElementById(`kbcOpt-${q.ans}`);
+                    correctBtn.classList.add('bg-emerald-600', 'text-white', 'kbc-glow-green');
+
+                    document.getElementById('kbcFeedbackText').className = "font-bold text-lg text-red-400";
+                    document.getElementById('kbcFeedbackText').innerText = "✕ गलत जवाब! सही उत्तर दर्शाया गया है।";
+                }
+
+                document.getElementById('kbcNextBar').classList.remove('hidden');
+                document.getElementById('mcqScorePoints').innerText = `${kbcScore * 10} Points`;
+            }, 1200);
+        }
+
+        function handleKbcTimeout() {
+            playSound('wrong');
+            const q = SENIOR_MCQS[currentKbcIdx];
+            const correctBtn = document.getElementById(`kbcOpt-${q.ans}`);
+            if (correctBtn) correctBtn.classList.add('bg-emerald-600', 'text-white', 'kbc-glow-green');
+
+            document.getElementById('kbcFeedbackText').className = "font-bold text-lg text-red-400";
+            document.getElementById('kbcFeedbackText').innerText = "⏱ समय समाप्त! सही उत्तर दर्शाया गया है।";
+            document.getElementById('kbcNextBar').classList.remove('hidden');
+        }
+
+        function loadNextKbcQuestion() {
+            playSound('click');
+            if (currentKbcIdx < SENIOR_MCQS.length - 1) {
+                currentKbcIdx++;
+                loadKbcQuestion();
+            } else {
+                switchExamTab('result');
+            }
+        }
+
+        // KBC Lifelines
+        function useLifeline(type) {
+            if (!lifelines[type]) return;
+            playSound('click');
+            lifelines[type] = false;
+            updateLifelineButtons();
+
+            const q = SENIOR_MCQS[currentKbcIdx];
+
+            if (type === '5050') {
+                let removed = 0;
+                for (let i = 0; i < q.opts.length; i++) {
+                    if (i !== q.ans && removed < 2) {
+                        const optBtn = document.getElementById(`kbcOpt-${i}`);
+                        if (optBtn) optBtn.style.opacity = '0.15';
+                        removed++;
+                    }
+                }
+            } else if (type === 'poll') {
+                const pollModal = document.getElementById('audiencePollModal');
+                const pollContainer = document.getElementById('pollBarsContainer');
+                pollModal.classList.remove('hidden');
+
+                pollContainer.innerHTML = q.opts.map((opt, idx) => {
+                    const percent = idx === q.ans ? 72 : Math.floor(Math.random() * 12);
+                    return `
+                        <div>
+                            <div class="flex justify-between text-xs text-amber-200 mb-1">
+                                <span>Option ${String.fromCharCode(65 + idx)}</span>
+                                <span>${percent}%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-3 overflow-hidden">
+                                <div class="bg-amber-500 h-full rounded-full" style="width: ${percent}%"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } else if (type === 'skip') {
+                loadNextKbcQuestion();
+            }
+        }
+
+        function closePollModal() {
+            playSound('click');
+            document.getElementById('audiencePollModal').classList.add('hidden');
+        }
+
+        function updateLifelineButtons() {
+            ['5050', 'poll', 'skip'].forEach(type => {
+                const btn = document.getElementById(`lifeline${type.charAt(0).toUpperCase() + type.slice(1)}`);
+                if (btn) {
+                    if (!lifelines[type]) {
+                        btn.disabled = true;
+                        btn.classList.add('opacity-30', 'line-through');
+                    } else {
+                        btn.disabled = false;
+                        btn.classList.remove('opacity-30', 'line-through');
+                    }
+                }
+            });
+        }
+
+
+        /* -------------------------------------------------------------
+           MATCHING COLUMNS LOGIC
+        ------------------------------------------------------------- */
+        function renderMatchingQuestions() {
+            const container = document.getElementById('matchContainer');
+            container.innerHTML = MATCH_DATA.map((row) => `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-slate-950 p-3 rounded-xl border border-slate-800" id="matchRow-${row.id}">
+                    <div class="font-bold text-amber-200 text-sm md:text-base">
+                        ${row.q}
+                    </div>
+                    <div>
+                        <select onchange="handleMatchSelect(${row.id}, this.value)" class="w-full bg-slate-900 border border-amber-500/40 rounded-lg p-2.5 text-amber-300 text-sm font-semibold focus:outline-none focus:border-amber-400">
+                            <option value="">-- उत्तर का चुनाव करें --</option>
+                            ${row.options.map((opt, oIdx) => `<option value="${oIdx}">${opt}</option>`).join('')}
+                        </select>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handleMatchSelect(qId, val) {
+            if (val !== "") {
+                matchAnswers[qId] = parseInt(val);
+            } else {
+                delete matchAnswers[qId];
+            }
+        }
+
+        function checkMatchAnswers() {
+            playSound('click');
+            let correctCount = 0;
+            MATCH_DATA.forEach(row => {
+                const userAns = matchAnswers[row.id];
+                const rowElem = document.getElementById(`matchRow-${row.id}`);
+                if (userAns !== undefined && userAns === row.correctIndex) {
+                    correctCount++;
+                    rowElem.className = "grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-emerald-950/60 p-3 rounded-xl border border-emerald-500/50";
+                } else {
+                    rowElem.className = "grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-red-950/40 p-3 rounded-xl border border-red-500/50";
+                }
+            });
+            alert(`जॉड़ियाँ परिणाम: आपने 15 में से ${correctCount} सही जोड़ियाँ मिलाई हैं!`);
+        }
+
+
+        /* -------------------------------------------------------------
+           SHORT & LONG ANSWERS SELF-EVALUATION LOGIC
+        ------------------------------------------------------------- */
+        function renderShortQuestions() {
+            const container = document.getElementById('shortQuestionsContainer');
+            const questions = currentCategory === 'supersenior' ? SUPER_SHORT_QS : SENIOR_SHORT_QS;
+
+            container.innerHTML = questions.map(q => `
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
+                    <p class="font-bold text-amber-300 text-base">Q.${q.id} ${q.q}</p>
+                    <textarea placeholder="अपना उत्तर यहाँ टाइप करें..." rows="2" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-gray-200 focus:outline-none focus:border-amber-400"></textarea>
+                    
+                    <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-900">
+                        <button onclick="toggleModelAnswer('shortAns-${q.id}')" class="text-xs text-amber-400 hover:text-amber-300 font-bold flex items-center">
+                            <i class="fa-solid fa-key mr-1"></i> आदर्श उत्तर देखें (Model Answer)
+                        </button>
+                        
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs text-gray-400">अंक दें:</span>
+                            <button onclick="setShortScore(${q.id}, 1)" class="px-3 py-1 text-xs rounded font-bold bg-emerald-900/60 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-800">1 (सही)</button>
+                            <button onclick="setShortScore(${q.id}, 0)" class="px-3 py-1 text-xs rounded font-bold bg-red-900/60 border border-red-500/40 text-red-300 hover:bg-red-800">0 (गलत)</button>
+                        </div>
+                    </div>
+
+                    <div id="shortAns-${q.id}" class="hidden p-3 bg-emerald-950/40 border border-emerald-500/30 rounded-lg text-emerald-200 text-sm font-semibold">
+                        उत्तर: ${q.modelAns}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setShortScore(qId, score) {
+            playSound('click');
+            shortScores[qId] = score;
+        }
+
+        function renderLongQuestions() {
+            const container = document.getElementById('longQuestionsContainer');
+            container.innerHTML = SUPER_LONG_QS.map(q => `
+                <div class="bg-slate-950 p-6 rounded-2xl border border-amber-500/30 space-y-4">
+                    <p class="font-bold text-amber-300 text-lg whitespace-pre-line">${q.q}</p>
+                    <textarea placeholder="विस्तृत उत्तर यहाँ लिखें..." rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-sm text-gray-200 focus:outline-none focus:border-amber-400"></textarea>
+                    
+                    <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-900">
+                        <button onclick="toggleModelAnswer('longAns-${q.id}')" class="text-xs text-amber-400 hover:text-amber-300 font-bold flex items-center">
+                            <i class="fa-solid fa-key mr-1"></i> आदर्श उत्तर देखें
+                        </button>
+                        
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs text-gray-400">अंक दें (Max 2.5):</span>
+                            <button onclick="setLongScore(${q.id}, 2.5)" class="px-3 py-1 text-xs rounded font-bold bg-emerald-900/60 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-800">2.5 (पूर्ण)</button>
+                            <button onclick="setLongScore(${q.id}, 1.5)" class="px-3 py-1 text-xs rounded font-bold bg-amber-900/60 border border-amber-500/40 text-amber-300 hover:bg-amber-800">1.5 (आंशिक)</button>
+                            <button onclick="setLongScore(${q.id}, 0)" class="px-3 py-1 text-xs rounded font-bold bg-red-900/60 border border-red-500/40 text-red-300 hover:bg-red-800">0 (गलत)</button>
+                        </div>
+                    </div>
+
+                    <div id="longAns-${q.id}" class="hidden p-4 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-emerald-200 text-sm font-semibold whitespace-pre-line">
+                        उत्तर: ${q.modelAns}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setLongScore(qId, score) {
+            playSound('click');
+            longScores[qId] = score;
+        }
+
+        function toggleModelAnswer(elemId) {
+            playSound('click');
+            const elem = document.getElementById(elemId);
+            if (elem) elem.classList.toggle('hidden');
+        }
+
+
+        /* -------------------------------------------------------------
+           EXAM TAB SWITCHER & RESULT CALCULATOR
+        ------------------------------------------------------------- */
+        function switchExamTab(tab) {
+            playSound('click');
+            document.getElementById('examMcqSection').classList.add('hidden');
+            document.getElementById('examMatchSection').classList.add('hidden');
+            document.getElementById('examShortSection').classList.add('hidden');
+            document.getElementById('examLongSection').classList.add('hidden');
+            document.getElementById('examResultSection').classList.add('hidden');
+
+            if (tab === 'mcq') document.getElementById('examMcqSection').classList.remove('hidden');
+            if (tab === 'match') document.getElementById('examMatchSection').classList.remove('hidden');
+            if (tab === 'short') document.getElementById('examShortSection').classList.remove('hidden');
+            if (tab === 'long') document.getElementById('examLongSection').classList.remove('hidden');
+            if (tab === 'result') {
+                calculateAndRenderResults();
+                document.getElementById('examResultSection').classList.remove('hidden');
+            }
+        }
+
+        function calculateAndRenderResults() {
+            // MCQ Score
+            document.getElementById('resMcqScore').innerText = `${kbcScore} / 50`;
+
+            // Match Score
+            let matchCorrect = 0;
+            MATCH_DATA.forEach(row => {
+                if (matchAnswers[row.id] === row.correctIndex) matchCorrect++;
+            });
+            document.getElementById('resMatchScore').innerText = `${matchCorrect} / 15`;
+
+            // Short Score
+            let shortTotal = 0;
+            Object.values(shortScores).forEach(val => shortTotal += val);
+            document.getElementById('resShortScore').innerText = `${shortTotal} / 10`;
+
+            // Long Score
+            let longTotal = 0;
+            const resLongBox = document.getElementById('resLongBox');
+            if (currentCategory === 'supersenior') {
+                resLongBox.classList.remove('hidden');
+                Object.values(longScores).forEach(val => longTotal += val);
+                document.getElementById('resLongScore').innerText = `${longTotal} / 25`;
+            } else {
+                resLongBox.classList.add('hidden');
+            }
+
+            // Percentage
+            const totalObtained = kbcScore + matchCorrect + shortTotal + (currentCategory === 'supersenior' ? longTotal : 0);
+            const totalMax = 50 + 15 + 10 + (currentCategory === 'supersenior' ? 25 : 0);
+            const pct = Math.round((totalObtained / totalMax) * 100);
+
+            document.getElementById('resTotalPercentage').innerText = `${pct}% (${totalObtained} / ${totalMax})`;
+
+            let gradeStr = "Mumtaz (ممتاز - 1st Rank)";
+            if (pct < 50) gradeStr = "Maqbool (मक़बूल - Pass)";
+            else if (pct < 75) gradeStr = "Jayyid (जिय्यिद - 2nd Division)";
+            document.getElementById('resGradeStatus').innerText = `ग्रेड: ${gradeStr}`;
+        }
+
+        function printResultCard() {
+            window.print();
+        }
+
+        function resetAllProgress() {
+            if (confirm("क्या आप अपनी परीक्षा प्रगति रीसेट करना चाहते हैं?")) {
+                kbcScore = 0;
+                matchAnswers = {};
+                shortScores = {};
+                longScores = {};
+                selectCategory(currentCategory);
+            }
+        }
+
+        // Initialize default view on load
+        window.onload = function() {
+            selectCategory('junior');
+        };
+    </script>
+</body>
+</html>
